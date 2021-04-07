@@ -15,7 +15,7 @@ const userSchema = mongoose.Schema({
         minlength: 5
     },
     lastname: {
-        tpye: String,
+        type: String,
         maxlength: 50
     },
     role: {
@@ -24,13 +24,13 @@ const userSchema = mongoose.Schema({
     },
     image: String,
     token: {
-        type: String
+        type: String,
     },
     tokenExp: {
         type: Number
     }
 })
 
-const User = mongoose.model('User', userSchema)
+const User = mongoose.model('User', userSchema);
 
-module.exports = {}
+module.exports = { User }

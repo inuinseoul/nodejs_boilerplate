@@ -1,10 +1,11 @@
 const express = require('express')
 const app = express()
 const port = 5000
-const bodyParser = require("body-parser");
-const cookieParser = require("cookie-parser")
-const { User } = require("./models/User");
-const config = require("./config/key")
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser')
+const { User } = require('./models/User');
+const { auth } = require('./middleware/auth');
+const config = require('./config/key')
 
 // application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -23,9 +24,8 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-app.post('/register', (req, res) => {
+app.post('/api/users/register', (req, res) => {
     // 회원가입에서 필요한 정보 client에서 가져오면 그것들을 데이터베이스에 넣어준다.
-
     const user = new User(req.body)
     user.save((err, user) => {
         if (err) return res.json({ success: false, err })
@@ -35,7 +35,7 @@ app.post('/register', (req, res) => {
     })
 })
 
-app.post('/login', (req, res) => {
+app.post('/api/users/login', (req, res) => {
     // 요청된 이메일가 데이터베이스가 존재하는지 확인
     User.findOne({ email: req.body.email }, (err, user) => {
         if (!user) {
@@ -53,12 +53,26 @@ app.post('/login', (req, res) => {
             // 비밀번호까지 맞다면 Token 생성
             user.generateToken((err, user) => {
                 if (err) return res.status(400).send(err)
-                // 토큰을 쿠키에 저장 (w_auth 이름으로 토큰정보 저장)
-                res.cookie("w_auth", user.token)
+                // 토큰을 쿠키에 저장 (x_auth 이름으로 토큰정보 저장)
+                res.cookie("x_auth", user.token)
                     .status(200)
                     .json({ loginSuccess: true, userId: user._id })
             })
         })
+    })
+})
+
+app.get('/api/users/auth', auth, (req, res) => {
+    // 해당 과정까지 오면 authentication이 true
+    res.status(200).json({
+        _id: req.user._id,
+        isAdmin: req.user.role === 0 ? false : true,
+        isAuth: true,
+        email: req.user.email,
+        name: req.user.name,
+        lastname: req.user.lastname,
+        role: req.user.role,
+        image: req.user.image
     })
 })
 

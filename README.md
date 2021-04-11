@@ -30,6 +30,8 @@ This is made for node.js boilerplate production.
 
 - study point1 👉 React를 사용해 기본 프론트엔드 구성
 - study point2 👉 Proxy server 활용으로 CROS 이슈 해결방법
+- study point3 👉 Concurrently를 이용해 프론트, 백 서버 한번에 켜기
+
 
 ## About Client Folder Structure
 

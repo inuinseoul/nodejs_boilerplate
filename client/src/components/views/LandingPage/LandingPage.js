@@ -3,9 +3,9 @@ import axios from 'axios'
 
 function LandingPage() {
 
-    useEffect(() => {
-        axios.get('/api/hello')
-    }, [])
+    // useEffect(() => {
+    //     axios.get('/api/hello')
+    // }, [])
 
     return (
         <div>

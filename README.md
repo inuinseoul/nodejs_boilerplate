@@ -53,5 +53,5 @@ This is made for node.js boilerplate production.
 - CORS 정책 : Cross-Origin Resource Sharing 정책으로, 서로 다른 origin간의 resource sharing을 제한하는 것 (보안의 목적)
 - Proxy server : 방화벽 기능 / 웹 필터 기능 / 캐쉬 데이터, 공유 데이터 제공 등의 기능을 제공하는 중간 서버
 - prps : 변하지 않는 부모 컴포넌트로부터 받는 값들로 수정이 불가능하다.
-- state : 부모로 부터 받는 것이 아닌 컴포넌트 안에서 데이터를 전달하는 것으로 수정이 가능하다. (state가 변하면 re-render 수행) 
+- state : 부모로부터 받는 것이 아닌 컴포넌트 안에서 데이터를 전달하는 것으로 수정이 가능하다. (state가 변하면 re-render 수행) 
 - Redux : Javascript의 state 관리 라이브러리 (일종의 state 저장소같은 느낌)

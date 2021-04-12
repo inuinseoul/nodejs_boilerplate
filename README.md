@@ -1,5 +1,6 @@
 # nodejs_boilerplate
 This is made for node.js boilerplate production.
+(from [inflearn jhonahn's lecture](https://www.inflearn.com/course/%EB%94%B0%EB%9D%BC%ED%95%98%EB%A9%B0-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%85%B8%EB%93%9C-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EA%B8%B0%EB%B3%B8))
 
 ## Library
 
@@ -55,3 +56,6 @@ This is made for node.js boilerplate production.
 - prps : 변하지 않는 부모 컴포넌트로부터 받는 값들로 수정이 불가능하다.
 - state : 부모로부터 받는 것이 아닌 컴포넌트 안에서 데이터를 전달하는 것으로 수정이 가능하다. (state가 변하면 re-render 수행) 
 - Redux : Javascript의 state 관리 라이브러리 (일종의 state 저장소같은 느낌)
+- action : 사용자가 수행하는 행위에 대한 정보가 담겨있는 객체(object)
+- reducer : previousState와 action object를 받아 nextState를 리턴한다
+- store : 어플리케이션 전체의 state을 감싸주는 역할. 자체 메소드를 보유하고 있어 이를 통해 state를 관리할 수 있다.

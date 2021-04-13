@@ -37,6 +37,7 @@ This is made for node.js boilerplate production.
 - Proxy server 활용으로 CROS 이슈 해결방법
 - Concurrently를 이용해 프론트, 백 서버 한번에 켜기
 - Redux의 data flow(unidirectional data flow) 및 기초 활용방법
+- React hooks 활용으로 Functional Component에서 state 사용
 
 ## About Client Folder Structure
 
@@ -59,3 +60,5 @@ This is made for node.js boilerplate production.
 - action : 사용자가 수행하는 행위에 대한 정보가 담겨있는 객체(object)
 - reducer : previousState와 action object를 받아 nextState를 리턴한다
 - store : 어플리케이션 전체의 state을 감싸주는 역할. 자체 메소드를 보유하고 있어 이를 통해 state를 관리할 수 있다.
+- React Component : class component vs functional component
+- React hooks : functional component에서 class component의 기능을 사용하기 위해 개발된 것

@@ -38,6 +38,7 @@ This is made for node.js boilerplate production.
 - Concurrently를 이용해 프론트, 백 서버 한번에 켜기
 - Redux의 data flow(unidirectional data flow) 및 기초 활용방법
 - React hooks 활용으로 Functional Component에서 state 사용
+- auth를 체크해 권한마다 페이지 접근을 제한하는 방법
 
 ## About Client Folder Structure
 

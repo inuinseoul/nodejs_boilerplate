@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../../_actions/user_action';
 
-function LoginPage() {
+function LoginPage(props) {
     const dispatch = useDispatch();
 
     const [Email, setEmail] = useState("")
